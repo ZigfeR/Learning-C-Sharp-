@@ -133,3 +133,4 @@ $RECYCLE.BIN/
 _NCrunch*
 *.sln
 *.v2
+*.csproj
