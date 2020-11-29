@@ -4,7 +4,7 @@ using System;
 
 namespace MFU
 {
-    class Extract : Scaner
+    class Extract : Scanner
     {
         public void Extracts(string path)
         {

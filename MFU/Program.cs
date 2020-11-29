@@ -10,7 +10,7 @@ namespace MFU
         {
             var mfu = new MFU();
             var printer = new Printer();
-            var scaner = new Scaner();
+            var scaner = new Scanner();
 
             Console.WriteLine("Working with objects");
             Console.WriteLine("-----------------------\n");

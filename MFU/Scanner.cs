@@ -4,7 +4,7 @@ using System;
 
 namespace MFU
 {
-    class Scaner : Printer
+    class Scanner : Printer
     {
         public void Scan(string strToWrite, string path)
         {
