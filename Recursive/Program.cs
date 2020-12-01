@@ -4,142 +4,95 @@ namespace Recursive
 {
     class Program
     {
+        static void ProgressBar(int status)
+        {
+            Console.Write("w");
+            //for (int x = 0; x < 10000000; x++) ;
+            if (status < 100)
+            {
+                status++;
+                ProgressBar(status);
+            }
+            return;
+        }
+        static void StatusBar(int num)
+        {
+            Console.WriteLine($"Прогресс бар на 100%\n");
+            Console.Write("[");
+            ProgressBar(num);
+            Console.WriteLine("]\n");
+        }
+        static int Factorial(int factorial)
+        {
+            if (factorial == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return factorial * Factorial(factorial - 1);
+            }
+        }
+        static int Fibonacci(int fib)
+        {
+            if (fib == 0 || fib == 1)
+            {
+                return fib;
+            }
+            else
+            {
+                return Fibonacci(fib - 1) + Fibonacci(fib - 2);
+            }
+        }
+        static bool isPrime(int n, int i)
+        {
+            if (n <= 2)
+                return (n == 2) ? true : false;
+            if (n % i == 0)
+                return false;
+            if (i * i > n)
+                return true;
+
+            return isPrime(n, i + 1);
+        }
         static void Main(string[] args)
         {
-            Console.WriteLine("Упражнения с циклами");
-            Console.WriteLine("---------------------\n");
-
-            //Задание 1
-            for (int i = 1; i <= 5; i++)
+            while (true)
             {
-                Console.Write("*");
-            }
+                Console.Clear();
 
-            Console.WriteLine("");
+                Console.WriteLine("Упражнение рекурсии");
+                Console.WriteLine("-----------------------\n");
 
-            //Задание 2
-            Console.WriteLine("");
-            Console.Write("Введиет длину строки звездочек: ");
-            int num = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("");
+                int x = 0;
+                StatusBar(x);
 
-            for (int i = 1; i <= num; i++)
-            {
-                Console.Write("*");
-            }
+                Console.Write("Введите число: ");
+                int num1 = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("");
+                Console.WriteLine(" ");
 
-            //Задание 3
-            Console.WriteLine("");
-            Console.WriteLine("Квадрат");
-            Console.WriteLine("");
-            for (int i = 1; i <= 3; i++)
-            {
-                for (int j = 1; j <= 3; j++)
-                {
-                    Console.Write("*");
-                }
-                Console.WriteLine("");
-            }
+                Console.Write("Число фибоначи: ");
+                Console.WriteLine(Fibonacci(num1));
 
-            Console.WriteLine("");
-            Console.WriteLine("Прямоугольник");
-            Console.WriteLine("");
-            for (int i = 1; i <= 9; i++)
-            {
-                for (int j = 1; j <= 6; j++)
-                {
-                    Console.Write("*");
-                }
-                Console.WriteLine("");
-            }
-            //Задание 4
-            //Снизу вверх
-            Console.WriteLine("");
-            Console.Write("Введиет число для Треугольников и Ромба: ");
-            int num2 = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Число факториала: ");
+                Console.WriteLine(Factorial(num1));
 
-            Console.WriteLine("");
-            for (int i = 1; i <= num2; i++)
-            {
-                for (int j = 1; j <= i; j++)
-                {
-                    Console.Write("*");
-                }
+                Console.WriteLine(" ");
+
+
+                Console.Write("Проверка на простое число: ");
+                int startNumber = int.Parse(Console.ReadLine());
+
+                if (isPrime(startNumber, 2))
+                    Console.Write("Yes");
+                else
+                    Console.Write("No");
+
+
                 Console.WriteLine();
+                Console.ReadKey();
             }
-
-            //Сверху вниз
-            Console.WriteLine();
-            for (int i = num2; i >= 0; i--)
-            {
-                for (int j = 1; j <= i; j++)
-                {
-                    Console.Write("*");
-                }
-                Console.WriteLine();
-            }
-
-            //Зеркало сверху вниз
-            Console.WriteLine();
-            for (int i = 1; i <= num2; i++)
-            {
-                for (int j = num2; j > i; j--)
-                {
-                    Console.Write(" ");
-                }
-                for (int j = 1; j <= i; j++)
-                {
-                    Console.Write("*");
-                }
-                Console.WriteLine();
-            }
-
-            //Зеркало снизу вверх
-            Console.WriteLine();
-            for (int i = num2; i > 0; i--)
-            {
-                for (int j = num2; j > i; j--)
-                {
-                    Console.Write(" ");
-                }
-                for (int j = 1; j <= i; j++)
-                {
-                    Console.Write("*");
-                }
-                Console.WriteLine();
-            }
-
-            //Задание 5
-            //Ромб
-            Console.WriteLine();
-            for (int i = 1; i <= num2; i++)
-            {
-                for (int j = num2; j > i; j--)
-                {
-                    Console.Write(" ");
-                }
-                for (int j = 1; j <= ((i * 2) - 1); j++)
-                {
-                    Console.Write("*");
-                }
-                Console.WriteLine();
-            }
-            for (int i = (num2 - 1); i > 0; i--)
-            {
-                for (int j = num2; j > i; j--)
-                {
-                    Console.Write(" ");
-                }
-                for (int j = 1; j <= ((i * 2) - 1); j++)
-                {
-                    Console.Write("*");
-                }
-                Console.WriteLine();
-            }
-            Console.WriteLine("");
-            Console.ReadKey();
         }
     }
 }
