@@ -4,12 +4,19 @@ using System;
 
 namespace MFU
 {
-    class Printer
+    public partial class Printer
     {
-        public void Print(string strToWrite)
+        protected private double Price { get; set; }
+        protected string Name { get; set; }
+
+        public void Print(int Modul, string strToWrite)
         {
             Console.WriteLine("\n-Printing in progress-\n");
-            Console.WriteLine(strToWrite);
+
+            for (int i = 1; i <= Modul; i++){
+                Console.WriteLine(strToWrite);
+            }
+
             Console.WriteLine("\n-Printing completed-\n");
         }
     }
