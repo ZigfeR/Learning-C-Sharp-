@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace MFU
+{
+    class MFU_Canon : MFU
+    {
+        private string name = "Canon";
+        private string model;
+        private double price;
+        private Printer printer;
+        private Scanner scanner;
+        public MFU_Canon(string model, double price, Printer printer, Scanner scanner)
+        {
+            this.model = model;
+            this.price = price;
+            this.printer = printer;
+            this.scanner = scanner;
+        }
+        public void Print(string strToPrint)
+        {
+            printer.Print(strToPrint);
+        }
+    }
+}

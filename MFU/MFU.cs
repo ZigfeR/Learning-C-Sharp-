@@ -4,7 +4,7 @@ using System;
 
 namespace MFU
 {
-    class MFU : Extract
+    public partial class MFU : Extract
     {
     }
 }

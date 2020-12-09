@@ -1,21 +1,14 @@
-﻿using System.Text;
-using System.IO;
-using System;
+﻿using System;
 
 namespace MFU
 {
-    public partial class Printer
+    public class Printer
     {
-        protected private double Price { get; set; }
-        protected string Name { get; set; }
-
-        public void Print(int Modul, string strToWrite)
+        public virtual void Print(string strToPrint)
         {
             Console.WriteLine("\n-Printing in progress-\n");
 
-            for (int i = 1; i <= Modul; i++){
-                Console.WriteLine(strToWrite);
-            }
+            Console.WriteLine(strToPrint);
 
             Console.WriteLine("\n-Printing completed-\n");
         }

@@ -13,43 +13,64 @@ namespace MFU
         }
         static void Main(string[] args)
         {
-            var mfu = new MFU();
-            var printer = new Printer();
-            var scaner = new Scanner();
-            var canon = new CanonPrinter();
-            var hp = new HpPrinter();
+            Printer printerCanon = new CanonPrinter("CND-730", 349);
+            Printer printerHp = new HpPrinter("GV-210", 309);
+            var mfuCanon = new MFU_Canon("MF-02", 500, printerCanon, null);
+            var mfuHp = new MFU_Hp("MF-ML-46", 500, printerHp, null);
+
+
 
             Console.WriteLine("Working with objects");
             Console.WriteLine("-----------------------\n");
-
+            
             Console.WriteLine("\n---Printer started---\n");
+
             Console.WriteLine("\nWhat do you want to print: \n");
             string scannedStrOne = ReadLine();
-            Console.WriteLine("");
-            Console.Write("How many pages do you want to print: ");
-            int numberOfPages = Convert.ToInt32(ReadLine());
-            canon.Print(numberOfPages, scannedStrOne);
+            mfuCanon.Print(scannedStrOne);
 
-            hp.Print();
+            mfuHp.Print(scannedStrOne);
 
-            Console.WriteLine("\n---Scanner launched---\n");
-            
-            Console.WriteLine("\n-Scanning in progress-");
-            Console.WriteLine("\nWhich drive to import the file to:\n");
-            string path = ReadLine();
-            Console.WriteLine("\nPlease enter scanned text:\n");
-            string scannedStrTwo = ReadLine();
-            scaner.Scan(scannedStrTwo, path);
-            Console.WriteLine("\n-Scan completed-\n");
 
-            Console.WriteLine("\n---MFU started---\n");
-            Console.WriteLine("\n-Scanning in progress-");
-            Console.WriteLine("\nPlease enter scanned text:\n");
-            string scannedStrTree = ReadLine();
-            //mfu.Scan(scannedStrTree, path);
-            Console.WriteLine("\n-Scan completed-\n");
-
-            mfu.Extracts(path);
+            //var mfu = new MFU();
+            //var printer = new Printer();
+            //var scaner = new Scanner();
+            //var canon = new CanonPrinter();
+            //var hp = new HpPrinter();
+            //
+            //Printer printerOne = new CanonPrinter();
+            //
+            //string scannedStrOne = ReadLine();
+            //canon.Print(scannedStrOne);
+            //
+            //string scannedStrTwo = ReadLine();
+            //printer.Print(scannedStrTwo);
+            //printerOne.Print(scannedStrTwo);
+            //Console.WriteLine("\nWhat do you want to print: \n");
+            //
+            //Console.WriteLine("");
+            //Console.Write("How many pages do you want to print: ");
+            //string scannedStrTwo = ReadLine();
+            //hp.Print(scannedStrTwo);
+            //
+            //Console.WriteLine("\n---Scanner launched---\n");
+            //
+            //Console.WriteLine("\n-Scanning in progress-");
+            //Console.WriteLine("\nWhich drive to import the file to:\n");
+            //string path = ReadLine();
+            //Console.WriteLine("\nPlease enter scanned text:\n");
+            //string scannedStrTree = ReadLine();
+            //scaner.Scan(scannedStrTree, path);
+            //
+            //
+            //Console.WriteLine("\n---MFU started---\n");
+            //Console.WriteLine("\n-Scanning in progress-");
+            //Console.WriteLine("\nPlease enter scanned text:\n");
+            //string scannedStrFour = ReadLine();
+            ////mfu.Scan(scannedStrFour, path);
+            //Console.WriteLine("\n-Scan completed-\n");
+            //
+            //mfu.Extracts(path);
         }
     }
 }
