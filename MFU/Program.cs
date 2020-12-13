@@ -15,8 +15,10 @@ namespace MFU
         {
             Printer printerCanon = new CanonPrinter("CND-730", 349);
             Printer printerHp = new HpPrinter("GV-210", 309);
-            var mfuCanon = new MFU_Canon("MF-02", 500, printerCanon, null);
-            var mfuHp = new MFU_Hp("MF-ML-46", 500, printerHp, null);
+            Scanner scannerCanon = new CanonScaner("CS-14", 110);
+            Scanner scannerHp = new HpScanner("HHS-356", 110);
+            var mfuCanon = new MFU_Canon("MF-02", 500, printerCanon, scannerCanon);
+            var mfuHp = new MFU_Hp("MF-ML-46", 500, printerHp, scannerHp);
 
 
 
@@ -29,7 +31,9 @@ namespace MFU
             string scannedStrOne = ReadLine();
             mfuCanon.Print(scannedStrOne);
 
-            mfuHp.Print(scannedStrOne);
+            string scannedPathOne = ReadLine();
+            string scannedStrTwo = ReadLine();
+            mfuHp.Scan(scannedStrTwo, scannedPathOne);
 
 
             //var mfu = new MFU();

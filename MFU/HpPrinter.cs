@@ -18,13 +18,13 @@ namespace MFU
             this.model = model;
             this.price = price;
         }
-        public override void Print(string scannedStrOne)
+        public override void Print(string strToPrint)
         {
             Console.WriteLine(name);
             Console.WriteLine(model);
             Console.WriteLine($"\n{price}$");
 
-            base.Print(scannedStrOne);
+            base.Print(strToPrint);
         }
     }
 }

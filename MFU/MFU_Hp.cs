@@ -22,5 +22,9 @@ namespace MFU
         {
             printer.Print(strToPrint);
         }
+        public void Scan(string strToWrite, string path)
+        {
+            scanner.Scan(strToWrite, path);
+        }
     }
 }

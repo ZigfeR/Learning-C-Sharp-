@@ -4,9 +4,9 @@ using System;
 
 namespace MFU
 {
-    public partial class Scanner
+    public class Scanner
     {
-        public void Scan(string strToWrite, string path)
+        public virtual void Scan(string strToWrite, string path)
         {
             string fpath = @$"{path}:\Test.txt";
             // Delete file if exists

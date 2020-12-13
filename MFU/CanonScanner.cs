@@ -4,8 +4,27 @@ using System.Text;
 
 namespace MFU
 {
-    abstract class CanonScaner : Scanner
+    class CanonScaner : Scanner
     {
-        public abstract int Scan();
+        private string name = "Canon";
+        private string model;
+        private double price;
+        public CanonScaner()
+        {
+
+        }
+        public CanonScaner(string model, double price)
+        {
+            this.model = model;
+            this.price = price;
+        }
+        public override void Scan(string strToWrite, string path)
+        {
+            Console.WriteLine(name);
+            Console.WriteLine(model);
+            Console.WriteLine($"\n{price}$");
+
+            base.Scan(strToWrite, path);
+        }
     }
 }
