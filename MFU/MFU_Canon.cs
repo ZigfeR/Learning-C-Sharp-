@@ -18,6 +18,13 @@ namespace MFU
             this.printer = printer;
             this.scanner = scanner;
         }
+        public void Info()
+        {
+            Console.WriteLine($"\n{name}");
+            Console.WriteLine($"\n{model}");
+            Console.WriteLine($"\n{price}$");
+
+        }
         public void Print(string strToPrint)
         {
             printer.Print(strToPrint);

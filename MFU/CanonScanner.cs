@@ -18,12 +18,15 @@ namespace MFU
             this.model = model;
             this.price = price;
         }
-        public override void Scan(string strToWrite, string path)
+        public void Info()
         {
-            Console.WriteLine(name);
-            Console.WriteLine(model);
+            Console.WriteLine($"\n{name}");
+            Console.WriteLine($"\n{model}");
             Console.WriteLine($"\n{price}$");
 
+        }
+        public override void Scan(string strToWrite, string path)
+        {
             base.Scan(strToWrite, path);
         }
     }
