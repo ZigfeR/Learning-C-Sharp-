@@ -1,8 +1,4 @@
-﻿using System.Text;
-using System.IO;
-using System;
-
-namespace MFU
+﻿namespace MFU
 {
     public partial class MFU : Extract
     {

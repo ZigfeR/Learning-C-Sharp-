@@ -1,19 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MFU
 {
-    class CanonPrinter : Printer
+    class HpPrinter : Printer
     {
-        private string name = "Canon";
+        private string name = "HP";
         private string model;
-        private double price; 
-        public CanonPrinter()
+        private double price;
+        public HpPrinter()
         {
 
         }
-        public CanonPrinter(string model, double price)
+        public HpPrinter(string model, double price)
         {
             this.model = model;
             this.price = price;

@@ -1,6 +1,4 @@
-﻿using System.Text;
-using System.IO;
-using System;
+﻿using System;
 
 namespace MFU
 {
@@ -21,27 +19,11 @@ namespace MFU
             Scanner scannerHp = new HpScanner("HHS-356", 129);
             var mfuHp = new MFU_Hp("MF-ML-46", 439, printerHp, scannerHp);
 
-
-            Console.WriteLine("Working with objects");
-            Console.WriteLine("-----------------------\n");
-
-            Console.WriteLine("---------dics--------\n");
-
             string scannedPathOne = ReadLine();
-
-            Console.WriteLine("---------read--------\n");
-
-            string scannedStrTwo = ReadLine();
-            mfuHp.Scan(scannedStrTwo, scannedPathOne);
-
-            Console.WriteLine("\nWhat do you want to print: \n");
-
             string scannedStrOne = ReadLine();
-            mfuCanon.Print(scannedStrOne);
+            mfuHp.Scan(scannedStrOne, scannedPathOne);
 
-            Console.WriteLine("---------extr--------\n");
 
-            mfuHp.Extracts(scannedPathOne);
         }
     }
 }
