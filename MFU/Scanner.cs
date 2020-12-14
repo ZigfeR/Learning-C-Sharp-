@@ -15,13 +15,10 @@ namespace MFU
                 File.Delete(fpath);
             }
             // Create the file
-            Console.WriteLine("\n-Scan started-\n");
-
             using (FileStream fs = File.Create(fpath))
             {
                 AddTexttoFile(fs, strToWrite);
             }
-            Console.WriteLine("\n-Scan completed-\n");
         }
         void AddTexttoFile(FileStream fs, string value)
         {

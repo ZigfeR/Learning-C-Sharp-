@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MFU
 {
@@ -19,10 +23,13 @@ namespace MFU
             Scanner scannerHp = new HpScanner("HHS-356", 129);
             var mfuHp = new MFU_Hp("MF-ML-46", 439, printerHp, scannerHp);
 
-            string scannedPathOne = ReadLine();
-            string scannedStrOne = ReadLine();
-            mfuHp.Scan(scannedStrOne, scannedPathOne);
+            var theWarehouse = Warehouse.GetWarehouse();
+            var theWarehous = theWarehouse["HP"];
 
+            Console.WriteLine("Модель: {0} и цена:{1}", theWarehous.Model, theWarehous.Price);
+            //string scannedPathOne = ReadLine();
+            //string scannedStrOne = ReadLine();
+            //mfuHp.Scan(scannedStrOne, scannedPathOne);
 
         }
     }
