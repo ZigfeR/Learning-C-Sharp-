@@ -1,29 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace MFU
 {
     public class Warehouse
     {
-
-        public string model { get; set; }
-        public double Price { get; set; }
-        public Warehouse(string model, double price)
+        public string Name { get; set; }
+        public string Model { get; set; }
+        public double Quantity { get; set; }
+        public Warehouse(string name, string model, double quantity)
         {
+            Name = name;
             Model = model;
-            Price = price;
+            Quantity = quantity;
         }
         public static Dictionary<string, Warehouse> GetWarehouse()
         {
             var warehouse = new Dictionary<string, Warehouse>();
-            var theWarehouse = new Warehouse("mg-245", 325);
-            warehouse.Add("Canon", theWarehouse);
+            var theWarehouse = new Warehouse("Canon", "CND-730", 10);
+            warehouse.Add("CND-730", theWarehouse);
 
-            theWarehouse = new Warehouse("dg-24", 405);
-            warehouse.Add("HP", theWarehouse);
+            theWarehouse = new Warehouse("HP", "GV-210", 15);
+            warehouse.Add("GV-210", theWarehouse);
 
             return warehouse;
         }
