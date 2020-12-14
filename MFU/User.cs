@@ -4,24 +4,24 @@ namespace MFU
 {
     class User
     {
-        private string name;
+        public string Name;
         private string adress;
         private double balance;
         private double spent;
 
         public User(string name, string adress, int balance, int spent)
         {
-            this.name = name;
+            Name = name;
             this.adress = adress;
             this.balance = balance;
             this.spent = spent;
         }
         public void Info()
         {
-            Console.WriteLine($"\n{name}");
-            Console.WriteLine($"\n{adress}");
-            Console.WriteLine($"\n{balance}$");
-            Console.WriteLine($"\n{spent}$");
+            Console.WriteLine($"\nName:\t\t{Name}");
+            Console.WriteLine($"\nAdress:\t\t{adress}");
+            Console.WriteLine($"\nBalance:\t{balance}$");
+            Console.WriteLine($"\nSpent:\t\t{spent}$");
         }
         public void ReduceBalance(double price)
         {

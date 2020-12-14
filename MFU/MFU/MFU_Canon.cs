@@ -21,7 +21,6 @@ namespace MFU
             Console.WriteLine($"\nTrademark:\t{name}");
             Console.WriteLine($"\nModel:\t\t{model}");
             Console.WriteLine($"\nPrice:\t\t{price}$");
-
         }
         public void Print(string strToPrint)
         {
