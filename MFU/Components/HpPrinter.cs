@@ -18,9 +18,9 @@ namespace MFU
         }
         public void Info()
         {
-            Console.WriteLine($"\n{name}");
-            Console.WriteLine($"\n{model}");
-            Console.WriteLine($"\n{price}$");
+            Console.WriteLine($"\nTrademark:\t{name}");
+            Console.WriteLine($"\nModel:\t\t{model}");
+            Console.WriteLine($"\nPrice:\t\t{price}$");
 
         }
         public override void Print(string strToPrint)

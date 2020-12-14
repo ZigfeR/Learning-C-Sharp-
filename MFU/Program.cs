@@ -11,18 +11,22 @@ namespace MFU
         }
         static void Main(string[] args)
         {
-            Printer printerCanon = new CanonPrinter("CND-730", 349);
-            Scanner scannerCanon = new CanonScaner("CS-14", 110);
-            var mfuCanon = new MFU_Canon("MF-02", 459, printerCanon, scannerCanon);
+            double pricePrinetCanon = 349;
+            double priceScannerCanon = 110;
+            double priceMfuCanon = pricePrinetCanon + priceScannerCanon;
+            Printer printerCanon = new CanonPrinter("CND-730", pricePrinetCanon);
+            Scanner scannerCanon = new CanonScaner("CS-14", priceScannerCanon);
+            var mfuCanon = new MFU_Canon("MF-02", priceMfuCanon, printerCanon, scannerCanon);
 
             Printer printerHp = new HpPrinter("GV-210", 310);
             Scanner scannerHp = new HpScanner("HHS-356", 129);
             var mfuHp = new MFU_Hp("MF-ML-46", 439, printerHp, scannerHp);
 
-            var theWarehouse = Warehouse.GetWarehouse();
-            var theWarehous = theWarehouse["CND-730"];
+            var theDevice = Warehouse.GetWarehouse();
+            var theDev = theDevice["CS-14"];
 
-            Console.WriteLine("Модель: {0} \nКоличество: {1}", theWarehous.Model, theWarehous.Quantity);
+            Console.WriteLine("Model:\t\t{0} \nQuantity:\t{1}", theDev.Model, theDev.Quantity);
+            mfuHp.Info();
             //string scannedPathOne = ReadLine();
             //string scannedStrOne = ReadLine();
             //mfuHp.Scan(scannedStrOne, scannedPathOne);
